@@ -34,7 +34,7 @@ class BannerPositionFrame: NSObject {
          bannerWidth: CGFloat,
          bannerHeight: CGFloat,
          maxY: CGFloat,
-         view : UIView) {
+         view : UIView? = nil) {
         super.init()
         self.view = view 
         self.startFrame = startFrame(for: bannerPosition, bannerWidth: bannerWidth, bannerHeight: bannerHeight, maxY: maxY)
