@@ -29,14 +29,12 @@ class BannerPositionFrame: NSObject {
     
     private(set) var startFrame: CGRect!
     private(set) var endFrame: CGRect!
-     private(set) var view : UIView!
+
     init(bannerPosition: BannerPosition,
          bannerWidth: CGFloat,
          bannerHeight: CGFloat,
-         maxY: CGFloat,
-         view : UIView) {
+         maxY: CGFloat) {
         super.init()
-        self.view = view 
         self.startFrame = startFrame(for: bannerPosition, bannerWidth: bannerWidth, bannerHeight: bannerHeight, maxY: maxY)
         self.endFrame = endFrame(for: bannerPosition, bannerWidth: bannerWidth, bannerHeight: bannerHeight, maxY: maxY)
     }
@@ -66,7 +64,7 @@ class BannerPositionFrame: NSObject {
                           height: bannerHeight)
 
         case .bottomRight:
-             return CGRect(x: view.frame.size.width,
+             return CGRect(x: 1500,
                           y: 300,
                           width: bannerWidth,
                           height: bannerHeight)
