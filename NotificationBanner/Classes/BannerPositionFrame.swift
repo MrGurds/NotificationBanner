@@ -16,6 +16,7 @@
  
  */
 
+// Edited by Ryan Wilson
 import UIKit
 
 @objc
@@ -96,8 +97,8 @@ class BannerPositionFrame: NSObject {
                           height: startFrame.height)
             
 case .bottomRight:
-return CGRect(x: 860,
-                          y: maxY - (bannerHeight * 3),
+return CGRect(x: 840,
+                          y: maxY - (bannerHeight * 2.7),
                           width: startFrame.width,
                           height: startFrame.height)
 
