@@ -96,8 +96,8 @@ class BannerPositionFrame: NSObject {
                           height: startFrame.height)
             
 case .bottomRight:
-return CGRect(x: 900,
-                          y: maxY - (bannerHeight * 2),
+return CGRect(x: 860,
+                          y: maxY - (bannerHeight * 3),
                           width: startFrame.width,
                           height: startFrame.height)
 
