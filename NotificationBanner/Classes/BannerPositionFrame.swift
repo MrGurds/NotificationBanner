@@ -22,6 +22,7 @@ import UIKit
 public enum BannerPosition: Int {
     case bottom
     case top
+    case bottomRight
 }
 
 class BannerPositionFrame: NSObject {
@@ -62,6 +63,11 @@ class BannerPositionFrame: NSObject {
                           width: bannerWidth,
                           height: bannerHeight)
 
+        case .bottomRight:
+             return CGRect(x: 400,
+                          y: 200,
+                          width: bannerWidth,
+                          height: bannerHeight)
         }
     }
     
@@ -89,6 +95,12 @@ class BannerPositionFrame: NSObject {
                           width: startFrame.width,
                           height: startFrame.height)
             
+case .bottomRight:
+return CGRect(x: 400,
+                          y: 200,
+                          width: startFrame.width,
+                          height: startFrame.height)
+
         }
     }
 
