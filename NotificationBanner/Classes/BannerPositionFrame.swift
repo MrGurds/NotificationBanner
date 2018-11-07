@@ -65,7 +65,7 @@ class BannerPositionFrame: NSObject {
 
         case .bottomRight:
              return CGRect(x: 1500,
-                          y: 200,
+                          y: 600,
                           width: bannerWidth,
                           height: bannerHeight)
         }
@@ -96,8 +96,8 @@ class BannerPositionFrame: NSObject {
                           height: startFrame.height)
             
 case .bottomRight:
-return CGRect(x: 600,
-                          y: 200,
+return CGRect(x: 800,
+                          y: 600,
                           width: startFrame.width,
                           height: startFrame.height)
 
