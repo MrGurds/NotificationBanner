@@ -310,7 +310,7 @@ public class BaseNotificationBanner: UIView {
         }
         
         if bannerPositionFrame == nil {
-            let widthConstraint = 0.35
+            let widthConstraint:CGFloat = 0.35
             self.bannerPosition = bannerPosition
             createBannerConstraints(for: bannerPosition)
             bannerPositionFrame = BannerPositionFrame(bannerPosition: bannerPosition,
