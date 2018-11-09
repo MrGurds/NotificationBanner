@@ -313,9 +313,10 @@ public class BaseNotificationBanner: UIView {
             self.bannerPosition = bannerPosition
             createBannerConstraints(for: bannerPosition)
             bannerPositionFrame = BannerPositionFrame(bannerPosition: bannerPosition,
-                                                      bannerWidth: appWindow.frame.width,
+                                                      bannerWidth: appWindow.frame.width * 0.35,
                                                       bannerHeight: bannerHeight,
-                                                      maxY: maximumYPosition())
+                                                      maxY: maximumYPosition(),
+                                                      maxX: maximumXPosition())
         }
         
         NotificationCenter.default.removeObserver(self,
@@ -471,6 +472,17 @@ public class BaseNotificationBanner: UIView {
         }
     }
 
+   /** 
+        Calculates the maximum `x` position that a notification banner can slide in from
+    */
+ 
+    private func maximumXPosition() -> CGFloat {
+        if let parentViewController = parentViewController {
+            return parentViewController.view.frame.height
+        } else {
+            return appWindow.frame.width
+        }
+    }
     /**
          Determines wether or not we should adjust the banner for notch featured iPhone
      */

@@ -34,10 +34,11 @@ class BannerPositionFrame: NSObject {
     init(bannerPosition: BannerPosition,
          bannerWidth: CGFloat,
          bannerHeight: CGFloat,
-         maxY: CGFloat) {
+         maxY: CGFloat,
+         maxX: CGFloat) {
         super.init()
-        self.startFrame = startFrame(for: bannerPosition, bannerWidth: bannerWidth, bannerHeight: bannerHeight, maxY: maxY)
-        self.endFrame = endFrame(for: bannerPosition, bannerWidth: bannerWidth, bannerHeight: bannerHeight, maxY: maxY)
+        self.startFrame = startFrame(for: bannerPosition, bannerWidth: bannerWidth, bannerHeight: bannerHeight, maxY: maxY, maxX: maxX)
+        self.endFrame = endFrame(for: bannerPosition, bannerWidth: bannerWidth, bannerHeight: bannerHeight, maxY: maxY, maxX: maxX)
     }
     
     /**
@@ -51,7 +52,8 @@ class BannerPositionFrame: NSObject {
     private func startFrame(for bannerPosition: BannerPosition,
                             bannerWidth: CGFloat,
                             bannerHeight: CGFloat,
-                            maxY: CGFloat) -> CGRect {
+                            maxY: CGFloat,
+                            maxX : CGFloat) -> CGRect {
         switch bannerPosition {
         case .bottom:
             return CGRect(x: 0,
@@ -65,8 +67,8 @@ class BannerPositionFrame: NSObject {
                           height: bannerHeight)
 
         case .bottomRight:
-             return CGRect(x: 1500,
-                          y: 600,
+             return CGRect(x: maxX,
+                          y: maxY - (bannerHeight * 2.7),
                           width: bannerWidth,
                           height: bannerHeight)
         }
@@ -83,7 +85,8 @@ class BannerPositionFrame: NSObject {
     private func endFrame(for bannerPosition: BannerPosition,
                             bannerWidth: CGFloat,
                             bannerHeight: CGFloat,
-                            maxY: CGFloat) -> CGRect {
+                            maxY: CGFloat,
+                            maxX: CGFloat) -> CGRect {
         switch bannerPosition {
         case .bottom:
             return CGRect(x: 0,
@@ -97,7 +100,7 @@ class BannerPositionFrame: NSObject {
                           height: startFrame.height)
             
 case .bottomRight:
-return CGRect(x: 840,
+                    return CGRect(x: maxX - bannerWidth,
                           y: maxY - (bannerHeight * 2.7),
                           width: startFrame.width,
                           height: startFrame.height)
