@@ -321,10 +321,14 @@ public class BaseNotificationBanner: UIView {
         NotificationCenter.default.removeObserver(self,
                                                   name: UIDevice.orientationDidChangeNotification,
                                                   object: nil)
+                                                  /*
+                                                  Used for changing position when screen orientation is changed
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(onOrientationChanged),
                                                name: UIDevice.orientationDidChangeNotification,
                                                object: nil)
+                                               */
+                                               
         
         if placeOnQueue {
             bannerQueue.addBanner(self, queuePosition: queuePosition)
@@ -400,7 +404,7 @@ public class BaseNotificationBanner: UIView {
     
     /**
         Changes the frame of the notification banner when the orientation of the device changes
-    */
+   
     @objc private dynamic func onOrientationChanged() {
         updateSpacerViewHeight()
         
@@ -415,6 +419,7 @@ public class BaseNotificationBanner: UIView {
                                                   bannerHeight: bannerHeight,
                                                   maxY: maximumYPosition())
     }
+     */
     
     /**
         Called when a notification banner is tapped
